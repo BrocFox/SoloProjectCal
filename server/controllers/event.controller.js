@@ -27,11 +27,11 @@ module.exports.getEventByDateId = (req, res) => {
 }
 
 module.exports.updateEvent = (req, res) => {
-    Event.findOneAndUpdate({_id: req.params.id}, req.body, {new:true})
+    Event.findOneAndUpdate({_id: req.params.id}, req.body, {new:true, runValidators: true})
         .then(updatedEvent => res.json(updatedEvent))
         .catch((err) =>{
             res.status(400).json(err)
-        } );
+        });
 }
 
 module.exports.deleteEvent = (req, res) => {

@@ -30,7 +30,7 @@ const UpdateEvent = (props) => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
 
-        axios.patch("http://localhost:8000/api/event/"+ id, event)
+        axios.put("http://localhost:8000/api/event/"+ id, event)
             .then( res => {
                 console.log(res);
                 navigate(`/date/${res.data.dateId}`)
@@ -93,24 +93,24 @@ const UpdateEvent = (props) => {
                 <div style={form}>
                     <form onSubmit={onSubmitHandler}>
                         <p>
-                            {/* { errors.name? 
-                                <p style={styleError}>{errors.name.message}</p>
+                            { errors.description? 
+                                <p style={styleError}>{errors.description.message}</p>
                                 : null
-                            } */}
+                            }
                             <label>Event Description: </label>
                             <input type="text" name="description" onChange={(e) => setEvent({[e.target.name]:e.target.value})} value={event.description} />
                         </p>
                         <p>
-                            {/* { errors.number? 
-                                <p style={styleError}>{errors.number.message}</p>
+                            { errors.time? 
+                                <p style={styleError}>{errors.time.message}</p>
                                 : null
-                            } */}
+                            }
                             <label>Time: </label>
                             <input type="number" name="time" onChange={(e) => setEvent({[e.target.name]:e.target.value})} value={event.time} />
                         </p>
                         <p>
                             <label>Period: </label>
-                            <select type="text" name="period" class="form-select" aria-label="Default select" placeholder='Choose an option' onChange={(e) => setEvent({[e.target.name]:e.target.value})} >
+                            <select type="text" name="period" class="form-select" aria-label="Default select" onChange={(e) => setEvent({[e.target.name]:e.target.value})} >
                                 <option disabled={true} value={event.period}>
                                     --Choose an option--
                                 </option>

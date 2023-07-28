@@ -82,18 +82,18 @@ const CreateEvent = (props) => {
                 <div style={form}>
                     <form onSubmit={onSubmitHandler}>
                         <p>
-                            {/* { errors.description? 
+                            { errors.description? 
                                 <p style={styleError}>{errors.description.message}</p>
                                 : null
-                            } */}
+                            }
                             <label>Event Description: </label>
                             <input type="text" name="description" onChange={(e) => setDescription(e.target.value)} value={newEvent.description} />
                         </p>
                         <p>
-                            {/* { errors.time? 
+                            { errors.time? 
                                 <p style={styleError}>{errors.time.message}</p>
                                 : null
-                            } */}
+                            }
                             <label>Time: </label>
                             <input type="number" name="time" onChange={(e) => setTime(e.target.value)} value={newEvent.time} />
                         </p>

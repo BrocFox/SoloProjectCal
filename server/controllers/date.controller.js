@@ -22,7 +22,7 @@ module.exports.getDate = (req, res) => {
 
 module.exports.getDateByDate = (req, res) => {
     Date.findOne({date:req.params.date})
-        .then(date => res.json(date))
+        .then(dates => res.json(dates))
         .catch(err => res.json(err));
 }
 

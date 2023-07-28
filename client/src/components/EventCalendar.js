@@ -77,10 +77,7 @@ const EventCalendar = (props) => {
             </div>
             <form onSubmit={onSubmitHandler}>
                         <p>
-                            {/* { errors.name? 
-                                <p style={styleError}>{errors.name.message}</p>
-                                : null
-                            } */}
+
                             <input type="hidden" name="date" value={value} />
                         </p>
                         <input type="submit" value="Select"/>

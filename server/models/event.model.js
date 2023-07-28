@@ -16,6 +16,14 @@ const EventSchema = new mongoose.Schema({
         required: [
             true,
             "Time is required"
+        ],
+        min:[
+            1,
+            "Time must be greater than 0"
+        ],
+        max:[
+            12,
+            "Time must be less than 13"
         ]
     },
     period: { 
